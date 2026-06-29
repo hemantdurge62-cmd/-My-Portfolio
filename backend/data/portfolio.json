@@ -1,0 +1,124 @@
+{
+  "skills": [
+    {
+      "title": "⚡ Frontend Core",
+      "skills": ["React.js", "JavaScript (ES6+)", "HTML5", "CSS3 / Vanilla CSS", "Responsive Design", "Vite"]
+    },
+    {
+      "title": "⚙️ Backend & Systems",
+      "skills": ["Node.js", "Express.js", "MongoDB", "REST APIs", "JSON Data structures"]
+    },
+    {
+      "title": "🛠️ Tools & Workflows",
+      "skills": ["Git & GitHub", "npm / Node Package Manager", "VS Code", "Figma", "Chrome DevTools"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Smart Garbage Reporting System",
+      "desc": "A web platform where users can upload garbage images and report issues directly to authorities.",
+      "longDesc": "A complete crowdsourced civic application designed to streamline waste management. Citizens can take photos of public litter, automatically tag their location, and submit reports. Authorities access a dedicated dashboard displaying an interactive map heatmap to optimize cleanup routes and track task completion.",
+      "tech": "React, Node.js, MongoDB",
+      "techStack": ["React.js", "Node.js", "Express.js", "MongoDB", "Cloudinary API", "Leaflet Maps"],
+      "features": [
+        "Geolocation auto-tagging for precise coordinates",
+        "Secure image uploading and optimization in the cloud",
+        "Interactive admin dashboard with real-time analytics",
+        "Task assignment system and status update triggers"
+      ],
+      "image": "https://cdn-icons-png.flaticon.com/512/869/869636.png",
+      "category": "fullstack",
+      "github": "https://github.com",
+      "live": "#"
+    },
+    {
+      "title": "Modern Gym Website",
+      "desc": "A modern fitness website with responsive UI and smooth scrolling animations.",
+      "longDesc": "An immersive landing page and club management UI designed to maximize gym memberships. Features high-end modern layout styles, glassmorphic dynamic pricing cards, class schedule timetables, and an interactive BMI calculator utility.",
+      "tech": "HTML, CSS, JavaScript",
+      "techStack": ["HTML5", "CSS3 / Custom Grid", "Vanilla JavaScript", "AOS Scroll Animation", "Google Fonts"],
+      "features": [
+        "Highly responsive layouts tailored for mobile, tablet, and desktop",
+        "Functional interactive client-side BMI Calculator",
+        "Dynamic filtering schedules for gym sessions",
+        "Polished contact forms with hover state transitions"
+      ],
+      "image": "https://cdn-icons-png.flaticon.com/512/1048/1048953.png",
+      "category": "frontend",
+      "github": "https://github.com",
+      "live": "#"
+    },
+    {
+      "title": "Interactive Portfolio Website",
+      "desc": "Personal portfolio showcasing developer projects, certifications, and active timelines.",
+      "longDesc": "The very portfolio you are browsing! Built as a clean, highly customized developer showcase featuring a high-performance particle canvas background, a vertical milestone career tracker, and responsive modal lightboxes for detailed content viewing.",
+      "tech": "React, CSS",
+      "techStack": ["React.js", "Vanilla CSS", "HTML5 Canvas (Particle Webs)", "Vite Build Tool"],
+      "features": [
+        "Custom responsive CSS variables and ambient lighting blobs",
+        "Interactive 60fps connected-node canvas background",
+        "Smooth scroll-spy navigation tracking scrolling position",
+        "Frosted-glass details modals for certificate and project galleries"
+      ],
+      "image": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "category": "react",
+      "github": "https://github.com",
+      "live": "https://google.com"
+    }
+  ],
+  "certificates": [
+    {
+      "title": "Full-Stack Web Development Bootcamp",
+      "issuer": "Udemy",
+      "date": "2025",
+      "code": "UC-488f572a-9e12-4c8d-b772",
+      "skills": ["React.js", "Node.js", "Express.js", "MongoDB", "SQL Basics", "Git & GitHub"],
+      "link": "https://udemy.com",
+      "badgeColor": "linear-gradient(135deg, #FFD700, #FFA500)"
+    },
+    {
+      "title": "Advanced React Developer Certification",
+      "issuer": "Coursera",
+      "date": "2025",
+      "code": "COURSERA-RX90374L",
+      "skills": ["State Management (Redux/Context)", "Custom Hooks", "React Performance Optimization", "Hooks Architecture"],
+      "link": "https://coursera.org",
+      "badgeColor": "linear-gradient(135deg, #00C9FF, #92FE9D)"
+    },
+    {
+      "title": "Regional Hackathon Outstanding Participation",
+      "issuer": "University Innovation Event",
+      "date": "2026",
+      "code": "HACK-2026-MEMBER-48",
+      "skills": ["Rapid Prototyping", "Team Collaboration", "UI/UX Pitching", "Product Design"],
+      "link": "#",
+      "badgeColor": "linear-gradient(135deg, #f857a6, #ff5858)"
+    }
+  ],
+  "milestones": [
+    {
+      "year": "2026 - Present",
+      "title": "React Web Developer & Freelancer",
+      "subtitle": "Self-Employed / Client Projects",
+      "desc": "Developing custom, high-end responsive websites and SaaS interfaces for clients, incorporating glassmorphic designs and custom CSS styling."
+    },
+    {
+      "year": "2025",
+      "title": "Created Smart Civic Systems",
+      "subtitle": "Open Source / Independent Developer",
+      "desc": "Architected and built the Smart Garbage Reporting System web portal utilizing React, Node.js, and MongoDB to streamline community cleanup requests."
+    },
+    {
+      "year": "2024 - Present",
+      "title": "Pursuing Engineering Degree",
+      "subtitle": "Computer Science & Engineering Studies",
+      "desc": "Mastering database management systems, data structures, algorithms, object-oriented concepts, and fundamentals of UI/UX design."
+    },
+    {
+      "year": "2023",
+      "title": "Started Software Engineering Journey",
+      "subtitle": "The Foundation",
+      "desc": "Began studying core web architectures, building fluid user experiences using modern HTML5, CSS3, and core JavaScript logic structures."
+    }
+  ]
+}

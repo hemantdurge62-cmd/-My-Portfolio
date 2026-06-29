@@ -1,0 +1,231 @@
+.linkedin-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.linkedin-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.linkedin-close-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.linkedin-card-wrapper {
+  width: 100%;
+  max-width: 800px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgba(0,0,0,0.9);
+  text-align: left;
+  position: relative;
+  z-index: 10;
+}
+
+.linkedin-banner {
+  height: 200px;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  position: relative;
+}
+
+.linkedin-profile-pic {
+  width: 152px;
+  height: 152px;
+  border-radius: 50%;
+  border: 4px solid white;
+  position: absolute;
+  bottom: -76px;
+  left: 24px;
+  background-color: #e0e0e0;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.linkedin-content {
+  padding: 85px 24px 24px 24px;
+  position: relative;
+}
+
+.linkedin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.linkedin-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.linkedin-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.linkedin-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  color: rgba(0,0,0,0.9);
+}
+
+.linkedin-badge {
+  color: #666666;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 10px;
+}
+
+.linkedin-pronouns {
+  font-size: 14px;
+  color: rgba(0,0,0,0.6);
+  font-weight: 400;
+}
+
+.linkedin-headline {
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  color: rgba(0,0,0,0.9);
+}
+
+.linkedin-location {
+  font-size: 14px;
+  color: rgba(0,0,0,0.6);
+  margin: 0 0 8px 0;
+}
+
+.linkedin-location a {
+  color: #0a66c2;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.linkedin-location a:hover {
+  text-decoration: underline;
+}
+
+.linkedin-connections {
+  font-size: 14px;
+  color: #0a66c2;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.linkedin-connections:hover {
+  text-decoration: underline;
+}
+
+.linkedin-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.btn-primary {
+  background-color: #0a66c2;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-primary:hover {
+  background-color: #004182;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: rgba(0,0,0,0.6);
+  border: 1px solid rgba(0,0,0,0.6);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0,0,0,0.08);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.6);
+}
+
+.linkedin-education {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 232px;
+  margin-top: 16px;
+}
+
+@media (min-width: 768px) {
+  .linkedin-education {
+    margin-top: 0;
+    margin-left: 16px;
+  }
+}
+
+.edu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0,0,0,0.9);
+}
+
+.edu-icon {
+  width: 32px;
+  height: 32px;
+  background-color: #f3f2ef;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}

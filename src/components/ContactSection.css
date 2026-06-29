@@ -1,0 +1,352 @@
+.contact-section {
+  position: relative;
+  background: radial-gradient(circle at 10% 20%, rgba(189, 0, 255, 0.02) 0%, rgba(5, 5, 12, 0.98) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 50px;
+  width: 100%;
+  max-width: 1200px;
+  align-items: stretch;
+}
+
+/* Left Column: Direct info */
+.contact-info {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 15px;
+}
+
+.contact-desc {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.channel-box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.channel-icon {
+  font-size: 1.6rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.channel-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.channel-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.channel-val {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.channel-val:hover {
+  color: var(--color-primary);
+  text-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
+}
+
+.social-links-container h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 15px;
+}
+
+.social-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.social-tag {
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.social-tag:hover {
+  background: rgba(189, 0, 255, 0.05);
+  border-color: var(--color-secondary);
+  color: #e879f9;
+  box-shadow: 0 0 12px rgba(189, 0, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Right Column: 3D Flip Card Interactive Form */
+.contact-form-wrapper {
+  position: relative;
+  padding: 0; /* Clear padding for children fit */
+  min-height: 480px;
+  perspective: 1500px; /* Crucial for 3D flip */
+  border-radius: 20px;
+  overflow: visible;
+}
+
+.form-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.contact-form-wrapper.flipped .form-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Sides setup */
+.form-card-front, .form-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-card-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.form-card-back {
+  transform: rotateY(180deg);
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.form-card-front h3 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 25px;
+}
+
+/* Floating Input Group Styling */
+.input-group {
+  position: relative;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.input-group input, .input-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.input-group textarea {
+  resize: none;
+}
+
+/* Inputs Label Placement */
+.input-group label {
+  position: absolute;
+  top: 13px;
+  left: 16px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  pointer-events: none;
+  transition: var(--transition-fast);
+}
+
+/* Input focusing & values shifts label upward */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
+  top: -10px;
+  left: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: #090916; /* Cover standard line boundary */
+  padding: 0 8px;
+  border-radius: 4px;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+  border-color: var(--color-primary);
+  background: rgba(0, 245, 255, 0.02);
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.1);
+}
+
+/* Errors handling */
+.input-group.has-error input, .input-group.has-error textarea {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.02);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.1);
+}
+
+.input-group.has-error label {
+  color: #ef4444 !important;
+}
+
+.error-txt {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #f87171;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px 0;
+  height: 48px;
+}
+
+/* Submitting loading spinner */
+.spinner-wrapper {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #000;
+  border-radius: 50%;
+  animation: pulse-dot 1.2s infinite ease-in-out both;
+}
+
+.spinner-dot:nth-child(1) { animation-delay: -0.32s; }
+.spinner-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes pulse-dot {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
+/* Success Card details */
+.success-icon-wrap {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.success-checkmark {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #10b981;
+  z-index: 5;
+}
+
+.success-pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.08);
+  border: 2px solid #10b981;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  animation: cert-modal-scale-up 0.5s ease;
+}
+
+.form-card-back h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 15px;
+}
+
+.form-card-back p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 320px;
+}
+
+.reset-btn {
+  padding: 10px 25px;
+}
+
+/* Responsive constraints */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-info {
+    padding: 30px 20px;
+  }
+
+  .contact-form-wrapper {
+    min-height: 460px;
+  }
+
+  .form-card-front, .form-card-back {
+    padding: 30px 20px;
+  }
+}

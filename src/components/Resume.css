@@ -1,0 +1,240 @@
+.resume-section {
+  position: relative;
+  background: radial-gradient(circle at 50% 10%, rgba(189, 0, 255, 0.01) 0%, rgba(5, 5, 12, 0.98) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resume-container {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 50px;
+  width: 100%;
+  max-width: 1200px;
+  align-items: start;
+}
+
+/* Left Summary Column */
+.resume-left {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-sub {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+.resume-intro {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+/* Stats Metric Cards */
+.resume-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 20px 10px;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.stat-card:hover {
+  border-color: rgba(0, 245, 255, 0.3);
+  box-shadow: 0 5px 20px rgba(0, 245, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.stat-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 5px;
+}
+
+.stat-lbl {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.profile-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 35px;
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+}
+
+.profile-details-list strong {
+  color: var(--text-main);
+}
+
+.download-btn {
+  align-self: flex-start;
+  text-align: center;
+}
+
+/* Right Chronological Timeline */
+.resume-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding-left: 45px; /* Spacing for the track */
+}
+
+/* Central Timeline Line Track */
+.timeline-track {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 3px;
+  height: calc(100% - 20px);
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+  border-radius: 10px;
+}
+
+/* Individual item placement */
+.timeline-item {
+  position: relative;
+  width: 100%;
+}
+
+/* Neon node point on the track */
+.timeline-node {
+  position: absolute;
+  top: 25px;
+  left: -35px; /* Offset to center on the track */
+  width: 13px;
+  height: 13px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-primary);
+  z-index: 5;
+  transition: var(--transition-fast);
+}
+
+.node-pulse {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgba(0, 245, 255, 0.2);
+  animation: pulse-node-ping 2s infinite;
+}
+
+.timeline-item:hover .timeline-node {
+  background-color: var(--color-secondary);
+  box-shadow: 0 0 15px var(--color-secondary);
+}
+
+.timeline-item:hover .node-pulse {
+  background: rgba(189, 0, 255, 0.2);
+}
+
+/* Chronological card styling */
+.timeline-card {
+  padding: 30px;
+  text-align: left;
+}
+
+.timeline-year {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 5px 12px;
+  background: rgba(0, 245, 255, 0.08);
+  border: 1px solid rgba(0, 245, 255, 0.15);
+  color: var(--color-primary);
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.timeline-card h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 5px;
+}
+
+.timeline-card h5 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: 15px;
+}
+
+.timeline-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Keyframes pulse ping */
+@keyframes pulse-node-ping {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Responsive configurations */
+@media (max-width: 1024px) {
+  .resume-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .resume-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .resume-right {
+    padding-left: 30px;
+  }
+
+  .timeline-track {
+    left: 10px;
+  }
+
+  .timeline-node {
+    left: -25px;
+  }
+
+  .timeline-card {
+    padding: 20px;
+  }
+}

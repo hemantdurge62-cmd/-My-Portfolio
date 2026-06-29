@@ -1,0 +1,233 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 8% 0 8%;
+  background: radial-gradient(circle at 10% 20%, rgba(10, 10, 24, 0.95) 0%, rgba(5, 5, 12, 0.98) 100%);
+  color: var(--text-main);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Hero Content Styling */
+.hero-content {
+  max-width: 650px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(0, 245, 255, 0.2);
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+
+.hero-typing-wrap {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+}
+
+.typing {
+  color: var(--color-primary);
+  border-right: 3px solid var(--color-primary);
+  padding-right: 8px;
+  text-shadow: 0 0 15px rgba(0, 245, 255, 0.4);
+  animation: cursor-blink 0.8s infinite;
+}
+
+.hero-description {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 550px;
+}
+
+/* Buttons wrapper */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Floating Avatar with Rotating Border Ring */
+.hero-image-container {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.image-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-primary));
+  opacity: 0.15;
+  filter: blur(25px);
+  animation: rotate-glow 8s linear infinite;
+}
+
+.hero-image-container::before {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--color-primary), transparent 40%, var(--color-secondary));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: rotate-glow 6s linear infinite;
+}
+
+.hero-avatar {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: rgba(15, 15, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  z-index: 3;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes rotate-glow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cursor-blink {
+  0%, 100% {
+    border-color: var(--color-primary);
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 140px 6% 80px 6%;
+    gap: 50px;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-title {
+    font-size: 3.2rem;
+  }
+
+  .hero-typing-wrap {
+    font-size: 1.7rem;
+  }
+
+  .hero-image-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-image-container::before {
+    width: 270px;
+    height: 270px;
+  }
+
+  .hero-avatar {
+    width: 220px;
+    height: 220px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-typing-wrap {
+    font-size: 1.4rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .btn-premium {
+    width: 100%;
+  }
+
+  .hero-image-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero-image-container::before {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-avatar {
+    width: 180px;
+    height: 180px;
+  }
+}
