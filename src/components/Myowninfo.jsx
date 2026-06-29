@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./MyOwnInfo.css";
+import "./Myowninfo.css";
 
 // Fallback data if backend is offline
 const fallbackSkillCategories = [
